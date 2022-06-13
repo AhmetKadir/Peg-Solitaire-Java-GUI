@@ -23,7 +23,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author ahmet
+ * @author Ahmet Kadir Aksu
  */
 public class PegSolitaireFrame extends JFrame
                                 implements PegSolitaireGame{
