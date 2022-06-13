@@ -7,11 +7,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.io.FileInputStream;
-import java.io.FileReader;
-import java.util.Arrays;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.ButtonGroup;
@@ -24,6 +21,8 @@ import java.util.Scanner;
 /**
  *
  * @author Ahmet Kadir Aksu
+ * 
+ * Peg Solitaire Game with graphical user interface.
  */
 public class PegSolitaireFrame extends JFrame
                                 implements PegSolitaireGame{
@@ -34,7 +33,6 @@ public class PegSolitaireFrame extends JFrame
     private JTextField textScore;
     private JTextField fileNameFieldLoad;
     private JTextField fileNameFieldSave;
-    private JLabel endGameLabel;
     private JButton autoPlayButton;
     private JButton undoButton;
     private JButton resetButton;
@@ -45,8 +43,7 @@ public class PegSolitaireFrame extends JFrame
                          board2Button,
                          board3Button,
                          board4Button,
-                         board5Button,
-                         board6Button;
+                         board5Button;
     private ButtonGroup radioGroup;
         
     /*array for keep cell buttons*/
@@ -165,10 +162,6 @@ public class PegSolitaireFrame extends JFrame
         else board5Button = new JRadioButton("Board 5", false);
         board5Button.setBounds(450, 500, 100, 40);
         add(board5Button);
-
-        board6Button = new JRadioButton("Board 6", false);
-        /*board6Button.setBounds(550, 500, 100, 40);
-        add(board6Button);*/
         
         radioGroup = new ButtonGroup();
         radioGroup.add(board1Button);
@@ -212,7 +205,6 @@ public class PegSolitaireFrame extends JFrame
                 timer = new Timer(500, new ActionListener() {
                 @Override
                     public void actionPerformed(ActionEvent e) {  
-                        System.out.println("timer working");
                         playAuto();
                         updateBoard();
                         autoPlayButton.setBackground(Color.BLACK);
@@ -436,7 +428,6 @@ public class PegSolitaireFrame extends JFrame
     }
     
     public void updateCellButtons(){
-        System.out.println("cell buttons UPDATED");
         for(int i = 0; i<button_index; i++){
             if(action[i] == true){
                 int index = i;
@@ -486,19 +477,6 @@ public class PegSolitaireFrame extends JFrame
                                         "GAME IS OVER\n YOUR SCORE IS %d",score()));
                             return;
                         }
-
-                            /*for(int i = 0 ; i < gameBoard.length; i++){
-                                for(int j = 0; j<gameBoard[i].length; j++){
-                                    if(gameBoard[i][j] == cell.PEG)
-                                        System.out.print("P");
-                                    else if(gameBoard[i][j] == cell.EMPTY)
-                                        System.out.print(".");
-                                    else if(gameBoard[i][j] == cell.OUT)
-                                        System.out.print(" "); 
-                                }
-                                System.out.println("");
-                            }*/
-                            
                             clickNumber = 0;
                         }
                     }
@@ -541,7 +519,6 @@ public class PegSolitaireFrame extends JFrame
                     add(buttons[button_index]);
    
                 }
-                //System.out.printf("%d is %s\n\n", button_index, action[button_index]);
                 button_index++;
                 x_location += 48;
                 
@@ -596,7 +573,6 @@ public class PegSolitaireFrame extends JFrame
                     System.out.println("board 5 loaded");
                 break;
         }
-        System.out.println("CHANGED BOARD");
     }
     
     public void playUser(int trow, int tcolumn, char direction){                         
@@ -640,7 +616,6 @@ public class PegSolitaireFrame extends JFrame
             trow = (int)Math.floor(Math.random()*(xsize-1+1)+0);                    
             tcolumn = (int)Math.floor(Math.random()*(ysize-1+1)+0);
             rDirec = (int)Math.floor(Math.random()*(3-0+1)+0);;
-            System.out.printf("\n%d %d %d\n", trow, tcolumn, rDirec);
             switch(rDirec){
                 case 0 :
                     direction = 'R';
@@ -750,7 +725,6 @@ public class PegSolitaireFrame extends JFrame
     
     public void undo(){
         gameBoard[last_row][last_column]=cell.PEG;
-        System.out.println("Undo worked !!");
         switch(last_direc){                                         
             case 'R':
                 gameBoard [last_row][last_column+1]=cell.PEG;
@@ -798,7 +772,6 @@ public class PegSolitaireFrame extends JFrame
             }
         }
     }
-    System.out.println("Game is over!!!");
     return true;
 }
 

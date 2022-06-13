@@ -1,12 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package gui.folder;
 
 /**
  *
- * @author ahmet
+ * @author Ahmet Kadir Aksu
+ * 
+ * Interface for Peg Solitaire Game with graphical user interface
  */
 interface PegSolitaireGame {
     enum cell {EMPTY, PEG, OUT};

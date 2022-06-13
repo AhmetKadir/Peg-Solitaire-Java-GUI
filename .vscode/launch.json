@@ -1,0 +1,55 @@
+{
+	"configurations": [
+		{
+			"type": "java",
+			"name": "Launch Driver",
+			"request": "launch",
+			"mainClass": "gui.folder.Driver",
+			"projectName": "Peg-Solitaire-Java-Gui_fe1e333b"
+		},
+		{
+			"type": "java",
+			"name": "Launch gui",
+			"request": "launch",
+			"mainClass": "gui.folder.gui",
+			"projectName": "Peg-Solitaire-Java-Gui_fe1e333b"
+		},
+		{
+			"name": "Attach to Chrome",
+			"port": 9222,
+			"request": "attach",
+			"type": "pwa-chrome",
+			"webRoot": "${workspaceFolder}"
+		},
+		{
+			"args": [
+				"--extensionDevelopmentPath=${workspaceFolder}"
+			],
+			"name": "Launch Extension",
+			"outFiles": [
+				"${workspaceFolder}/out/**/*.js"
+			],
+			"preLaunchTask": "npm",
+			"request": "launch",
+			"type": "pwa-extensionHost"
+		},
+		{
+			"name": "Attach",
+			"port": 9229,
+			"request": "attach",
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"type": "pwa-node"
+		},
+		{
+			"name": "Attach",
+			"port": 9229,
+			"request": "attach",
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"type": "pwa-node"
+		}
+	]
+}
