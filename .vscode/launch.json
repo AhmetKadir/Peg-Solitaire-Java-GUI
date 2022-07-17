@@ -4,6 +4,13 @@
 			"type": "java",
 			"name": "Launch Driver",
 			"request": "launch",
+			"mainClass": "Driver",
+			"projectName": "Peg-Solitaire-Java-Gui_b7f4bd5a"
+		},
+		{
+			"type": "java",
+			"name": "Launch Driver",
+			"request": "launch",
 			"mainClass": "gui.folder.Driver",
 			"projectName": "Peg-Solitaire-Java-Gui_fe1e333b"
 		},

@@ -1,4 +1,4 @@
-package gui.folder;
+package GUI;
 
 /**
  *
