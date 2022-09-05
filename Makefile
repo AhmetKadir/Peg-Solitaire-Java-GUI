@@ -1,21 +1,13 @@
-JFLAGS = -g
 JC = javac
-JVM = java
-MAIN = Driver
-.SUFFIXES: .java .class
-.java.class:
-	$(JC) $(JFLAGS) $*.java
+R = java
+SUB = GUI/
+DRIVER = Driver
+JFlags = -g
 
-CLASSES = \
-	Driver.java \
-	GUI/PegSolitaireFrame.java GUI/PegSolitaireGame.java
 
-default: classes
+run:
+	$(JC) $(JFlags) $(SUB)*.java $(DRIVER).java  -d classfiles
+	$(R) -cp classfiles $(DRIVER)
 
-classes: $(CLASSES:.java=.class)
-
-run: classes
-	$(JVM) $(MAIN)
-	
 clean:
-	$(RM) *.class
+	rm classfiles/ -r
