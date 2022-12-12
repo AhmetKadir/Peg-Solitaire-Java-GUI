@@ -114,7 +114,7 @@ public class PegSolitaireFrame extends JFrame
         add(fileNameFieldLoad);
         
         fileNameFieldSave = new JTextField("Enter the fileName(Ex: game1)");
-        fileNameFieldSave.setBounds(250, 550, 250, 50);
+        fileNameFieldSave.setBounds(250, 550, 200, 50);
         fileNameFieldSave.setVisible(false);
         fileNameFieldSave.setBackground(Color.CYAN);
         fileNameFieldSave.setFont(new Font("Comic Sans MS", Font.PLAIN, 14));
@@ -125,11 +125,13 @@ public class PegSolitaireFrame extends JFrame
         fileNameFieldSave.addActionListener( handler );
         
         textScore = new JTextField(String.format(
-                                    "SCORE: %d",score()));
-        textScore.setBounds(650, 50, 250, 50);
-        textScore.setBackground(Color.BLUE);
+                                    "SCORE: %d",score())
+        );
+        textScore.setEditable(false);
+        textScore.setBounds(650, 50, 150, 50);
+        textScore.setBackground(Color.decode("#84DCCF"));
         textScore.setFont(new Font("Comic Sans MS", Font.PLAIN, 24));
-        textScore.setForeground(Color.WHITE);
+        textScore.setForeground(Color.BLACK);
         add(textScore);
         
         if(boardType == 1)
@@ -245,7 +247,7 @@ public class PegSolitaireFrame extends JFrame
                 PegSolitaireFrame newGame = new PegSolitaireFrame(boardType);
                 newGame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 newGame.setResizable(false);
-                newGame.getContentPane().setBackground(Color.GREEN);
+                newGame.getContentPane().setBackground(Color.decode("#A29587"));
                 newGame.setSize(900,700);
                 newGame.setVisible(true);
                 dispose();
@@ -299,7 +301,7 @@ public class PegSolitaireFrame extends JFrame
                 PegSolitaireFrame newGame = new PegSolitaireFrame(board);
                 newGame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 newGame.setResizable(false);
-                newGame.getContentPane().setBackground(Color.GREEN);
+                newGame.getContentPane().setBackground(Color.decode("#A29587"));
                 newGame.setSize(900,700);
                 newGame.setVisible(true);
                 dispose();
@@ -394,7 +396,7 @@ public class PegSolitaireFrame extends JFrame
                 if(gameBoard[i][j] == cell.PEG){
                     buttons[button_index] = new JButton("P");
                     buttons[button_index].setBounds(x_location, y_location, 45, 45);  
-                    buttons[button_index].setBackground(Color.ORANGE);
+                    buttons[button_index].setBackground(Color.decode("#7261A3"));
                     action[button_index]=true;
                     buttons[button_index].setToolTipText
                                 (String.format("(%d,%d)",i,j));
@@ -404,7 +406,7 @@ public class PegSolitaireFrame extends JFrame
                 else if(gameBoard[i][j] == cell.OUT){
                     buttons[button_index] = new JButton("");
                     buttons[button_index].setBounds(x_location, y_location,45,45);
-                    buttons[button_index].setBackground(Color.BLACK);
+                    buttons[button_index].setBackground(Color.decode("#0F0F0F"));
                     action[button_index]=false;
                     add(buttons[button_index]);
                 }
@@ -412,7 +414,7 @@ public class PegSolitaireFrame extends JFrame
                 else if(gameBoard[i][j] == cell.EMPTY){
                     buttons[button_index] = new JButton("");
                     buttons[button_index].setBounds(x_location, y_location ,45,45);
-                    buttons[button_index].setBackground(Color.RED);
+                    buttons[button_index].setBackground(Color.decode("#D4C2FC"));
                     action[button_index]=true;
                     buttons[button_index].setToolTipText
                                 (String.format("(%d,%d)",i,j));
@@ -449,7 +451,7 @@ public class PegSolitaireFrame extends JFrame
                         if(clickNumber == 1){
                             for(int a =0; a<gameBoard.length; a++){
                                 for(int j = 0; j<gameBoard[a].length; j++){
-                                   buttons[index].setBackground(Color.BLUE);
+                                   buttons[index].setBackground(Color.decode("#F8F1FF"));
 
                                 }
                             }
@@ -494,7 +496,7 @@ public class PegSolitaireFrame extends JFrame
                 if(gameBoard[i][j] == cell.PEG){
                     buttons[button_index].setText("P");
                     buttons[button_index].setBounds(x_location, y_location, 45, 45);  
-                    buttons[button_index].setBackground(Color.ORANGE);
+                    buttons[button_index].setBackground(Color.decode("#7261A3"));
                     action[button_index]=true;
                     buttons[button_index].setToolTipText
                                 (String.format("(%d,%d)",i,j));
@@ -504,7 +506,7 @@ public class PegSolitaireFrame extends JFrame
                 else if(gameBoard[i][j] == cell.OUT){
                     buttons[button_index].setText("");
                     buttons[button_index].setBounds(x_location, y_location,45,45);
-                    buttons[button_index].setBackground(Color.BLACK);
+                    buttons[button_index].setBackground(Color.decode("#0F0F0F"));
                     action[button_index]=false;
                     add(buttons[button_index]);
                 }
@@ -512,7 +514,7 @@ public class PegSolitaireFrame extends JFrame
                 else if(gameBoard[i][j] == cell.EMPTY){
                     buttons[button_index].setText("");
                     buttons[button_index].setBounds(x_location, y_location ,45,45);
-                    buttons[button_index].setBackground(Color.RED);
+                    buttons[button_index].setBackground(Color.decode("#D4C2FC"));
                     action[button_index]=true;
                     buttons[button_index].setToolTipText
                                 (String.format("(%d,%d)",i,j));
@@ -680,8 +682,8 @@ public class PegSolitaireFrame extends JFrame
                             @Override
                             public void actionPerformed(ActionEvent ae) {  
                                 buttons[index_].setBackground(Color.BLUE);
-                                buttons[indexfirst].setBackground(Color.MAGENTA);
-                                buttons[indexsecond].setBackground(Color.MAGENTA);
+                                buttons[indexfirst].setBackground(Color.decode("#84DCCF"));
+                                buttons[indexsecond].setBackground(Color.decode("#84DCCF"));
                                 repaint();
                                 timer2.stop();
                             }

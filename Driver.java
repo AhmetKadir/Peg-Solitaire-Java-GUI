@@ -18,7 +18,7 @@ public class Driver {
         PegSolitaireFrame gameFrame = new PegSolitaireFrame(2);
         gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         gameFrame.setResizable(false);
-        gameFrame.getContentPane().setBackground(Color.GREEN);
+        gameFrame.getContentPane().setBackground(Color.decode("#A29587"));
         gameFrame.setSize(900,700);
         gameFrame.setVisible(true);
     }
