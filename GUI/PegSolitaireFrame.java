@@ -9,6 +9,7 @@ import java.awt.event.ItemListener;
 import java.io.FileInputStream;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.ButtonGroup;
@@ -124,12 +125,11 @@ public class PegSolitaireFrame extends JFrame
         fileNameFieldLoad.addActionListener( handler );
         fileNameFieldSave.addActionListener( handler );
         
-        textScore = new JTextField(String.format(
+        var textScore = new JLabel(String.format(
                                     "SCORE: %d",score())
         );
-        textScore.setEditable(false);
         textScore.setBounds(650, 50, 150, 50);
-        textScore.setBackground(Color.decode("#84DCCF"));
+        textScore.setBackground(Color.WHITE);
         textScore.setFont(new Font("Comic Sans MS", Font.PLAIN, 24));
         textScore.setForeground(Color.BLACK);
         add(textScore);
