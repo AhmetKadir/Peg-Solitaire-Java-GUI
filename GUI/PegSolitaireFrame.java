@@ -31,9 +31,9 @@ public class PegSolitaireFrame extends JFrame
     /**
      * Components
      */
-    private JTextField textScore;
     private JTextField fileNameFieldLoad;
     private JTextField fileNameFieldSave;
+    private JLabel textScore;
     private JButton autoPlayButton;
     private JButton undoButton;
     private JButton resetButton;
@@ -125,7 +125,7 @@ public class PegSolitaireFrame extends JFrame
         fileNameFieldLoad.addActionListener( handler );
         fileNameFieldSave.addActionListener( handler );
         
-        var textScore = new JLabel(String.format(
+        textScore = new JLabel(String.format(
                                     "SCORE: %d",score())
         );
         textScore.setBounds(650, 50, 150, 50);
@@ -540,7 +540,6 @@ public class PegSolitaireFrame extends JFrame
                         gameBoard[i][j] = map1()[i][j];
                     }
                 }
-                System.out.println("board 1 loaded");
                 break;
             case 2:
                 for(int i = 0; i <map2().length; i++){
@@ -548,7 +547,6 @@ public class PegSolitaireFrame extends JFrame
                         gameBoard[i][j] = map2()[i][j];
                     }
                 }
-                System.out.println("board 2 loaded");
                 break; 
              case 3:
                 for(int i = 0; i <map3().length; i++){
@@ -556,7 +554,6 @@ public class PegSolitaireFrame extends JFrame
                         gameBoard[i][j] = map3()[i][j];
                     }
                 }
-                System.out.println("board 3 loaded");
                 break;
              case 4:
                 for(int i = 0; i <map4().length; i++){
@@ -564,7 +561,6 @@ public class PegSolitaireFrame extends JFrame
                         gameBoard[i][j] = map4()[i][j];
                     }
                 }
-                System.out.println("board 4 loaded");
                 break;
             case 5:
                 for(int i = 0; i < map5().length; i++){
@@ -572,7 +568,6 @@ public class PegSolitaireFrame extends JFrame
                         gameBoard[i][j] = map5()[i][j];
                     }
                 }
-                    System.out.println("board 5 loaded");
                 break;
         }
     }
@@ -681,7 +676,7 @@ public class PegSolitaireFrame extends JFrame
                 timer2 = new Timer(10000, new ActionListener() {
                             @Override
                             public void actionPerformed(ActionEvent ae) {  
-                                buttons[index_].setBackground(Color.BLUE);
+                                buttons[index_].setBackground(Color.WHITE);
                                 buttons[indexfirst].setBackground(Color.decode("#84DCCF"));
                                 buttons[indexsecond].setBackground(Color.decode("#84DCCF"));
                                 repaint();
