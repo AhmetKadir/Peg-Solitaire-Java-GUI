@@ -273,19 +273,6 @@ public class PegSolitaireFrame extends JFrame
             };
         });
     } // end Constructor
-
-    
-   /* private class ButtonHandler implements ActionListener{
-        //handle button event
-        private int x_loc = 1;
-        private int y_loc = JButton.WIDTH;
-        public void actionPerformed(ActionEvent event){
-            //playUser("02-R");
-            JOptionPane.showMessageDialog(PegSolitaireFrame.this,
-                    String.format(
-                        "You pressed: %d %d",x_loc, y_loc));
-        }
-    }*/
     
     //item listener for radio buttons
     private class RadioButtonHandler implements ItemListener {
@@ -683,10 +670,10 @@ public class PegSolitaireFrame extends JFrame
                                 timer2.stop();
                             }
                         });
-                        timer2.setRepeats(true);
-                        timer2.setCoalesce(true);
-                        timer2.setInitialDelay(0);
-                        timer2.start();
+                timer2.setRepeats(true);
+                timer2.setCoalesce(true);
+                timer2.setInitialDelay(0);
+                timer2.start();
                 updateBoard();
             }
         }while(validMove == 0);
